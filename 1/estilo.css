@@ -1,0 +1,91 @@
+*{
+    align-items: center;
+}
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 520px;
+    text-align: center;
+    min-height: 100vh;
+    background-color: black;
+    color: #ff0534;
+    font-family: "Itin", coursive;
+}
+.neon{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 64px;
+    color: #ff0534;
+    border: 8px solid #ff0534;
+    padding: 16px 64px;
+    border-radius: 17px;
+
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0534;
+
+    box-shadow: inset 0 0 32px #ff0534, 0 0 32px #ff0534;
+
+    position: relative;
+}
+
+.neon::before{
+    pointer-events: none;
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: #ff0534;
+
+     left: 0;
+     top:200%;
+
+     transition: perspective(64px) rotateX(40deg) scale(1, 0.35);
+     filter: blur(64px);
+     opacity: 0.7;
+
+}
+
+.neon::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background-color: #ff0534;
+    box-shadow: 0 0 128px 32px #ff0534;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+.neon:hover::after,
+.neon:focus::after{
+    opacity: 1;
+}
+
+.neon:hover::before,
+.neon:focus::before{
+    opacity: 1;
+}
+
+.neon:hover,
+.neon:focus{
+    color: black;
+    text-shadow: none;
+}
+
+a{
+    
+    padding-top: 50%;
+}
+
+.espaco{
+    /* border: 2px solid white; */
+    padding-top: 200px;
+    margin-top: 200px;
+} 
+
